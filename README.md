@@ -3,8 +3,6 @@
 ## vue3.0安装
 ```
 npm i -g @vue/cli
-F：
-cd 目录
 vue create mall
 ```
 
