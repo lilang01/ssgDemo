@@ -1,8 +1,10 @@
 # mall
 
-## Project setup
+## vue3.0安装
 ```
-npm install
+npm i -g @vue/cli
+cd 目录
+vue create mall
 ```
 
 ### Compiles and hot-reloads for development
