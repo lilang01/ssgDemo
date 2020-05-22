@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+html, body {
+    font-family: Hel;
+    color: #333333;
+    background-color: #ffffff;
+    min-width: 1226px;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, li {
+    list-style: none;
+}
+
+input {
+    font: normal;
+}
+
+input:focus, a:focus {
+    outline: none;
+}
+
+.clear:after{content:'';display:block;clear:both;height:0;overflow:hidden;visibility:hidden;}
+.clear{zoom:1;}

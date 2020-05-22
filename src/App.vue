@@ -5,27 +5,35 @@
 </template>
 
 <script>
-import storage from "./storage/index";
 export default {
-  name: 'App',
-  components: {
+  name: 'app',
+  data () {
+    return {
+      res: {}
+    };
   },
-  mounted(){
-    storage.setItem('a',1);
-    // storage.setItem('user',{a:1})
-    // storage.setItem('abc',{a:1},'user');
-    // storage.clear('mall')
+  mounted () {
+    if (this.$cookie.get('userId')) {
+      this.getUser();
+      this.getCartCount();
+    }
+  },
+  methods: {
+    getUser () {
+      this.axios.get('/user').then((res = {}) => {
+        this.$store.dispatch('saveUserName', res.username)
+      });
+    },
+    getCartCount() {
+      this.axios.get("/carts/products/sum").then((res = 0) => {
+        this.$store.dispatch("saveCartCount", res);
+      });
+    }
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: red;
-  margin-top: 120px;
-}
+@import "./assets/css/style.css";
+@import "./assets/css/modal.css";
 </style>
