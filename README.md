@@ -26,13 +26,13 @@ cli-plugin-babel
 ### vuex手记
 ```
 import Vuex from 'vuex'
-// 使用vuex
+<!-- 使用vuex -->
 Vue.use(Vuex);
 const state={
     username:'',
     cartCount:0
 }
-// 创建Vuex实例
+<!-- 创建Vuex实例 -->
 export default new Vuex.Store({
     state,
     actions,
@@ -40,9 +40,9 @@ export default new Vuex.Store({
 })
 
 import store from './store'
-// 获取vuex状态数据
+<!-- 获取vuex状态数据 -->
 this.$store.state.username
-// 往vuex存入username数据,先通过actions传入mutations,mutations再导入state
+<!--  往vuex存入username数据,先通过actions传入mutations,mutations再导入state -->
 this.$store.dispatch("saveUserName", res.username);
 ```
 
@@ -50,9 +50,9 @@ this.$store.dispatch("saveUserName", res.username);
 ```
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-// 使用axios
+<!-- 使用axios -->
 Vue.use(VueAxios,axios);
-//用法
+<!-- 用法 -->
 this.axios.get("",{
     params:{
 
@@ -61,5 +61,21 @@ this.axios.get("",{
 });
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### vue-router手记
+import router from './router'
+<!-- 使用router -->
+Vue.use(Router);
+<!-- 用法 -->
+export default new Router({
+    routes:[
+        {
+            path: '',
+            name: '',
+            component: ,
+            children:[
+
+            ]
+        }
+    ]
+})
+
