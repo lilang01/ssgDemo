@@ -46,9 +46,19 @@ this.$store.state.username
 this.$store.dispatch("saveUserName", res.username);
 ```
 
-### Lints and fixes files
+### vue-axios手记
 ```
-npm run lint
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+// 使用axios
+Vue.use(VueAxios,axios);
+//用法
+this.axios.get("",{
+    params:{
+
+    }
+}).then(res => {
+});
 ```
 
 ### Customize configuration
