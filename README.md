@@ -3,13 +3,23 @@
 ## vue3.0安装
 ```
 npm i -g @vue/cli
+F：
 cd 目录
 vue create mall
 ```
 
-### Compiles and hot-reloads for development
+### 项目依赖插件
 ```
-npm run serve
+vue-router
+vuex
+axios
+vue-axios
+vue-lazyload
+element-ui
+node-sass
+sass-loader
+vue-awesome-swiper
+vue-axios vue-cookie
 ```
 
 ### Compiles and minifies for production
