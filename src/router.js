@@ -10,6 +10,7 @@ import Order from './pages/order'
 import OrderConfirm from './pages/orderConfirm'
 import OrderList from './pages/orderList'
 import OrderPay from './pages/orderPay'
+import Alipay from './pages/alipay'
 
 Vue.use(Router);
 
@@ -55,19 +56,24 @@ export default new Router({
             component: Order,
             children: [
                 {
-                    path: '/confirm',
+                    path: 'confirm',
                     name: 'order-confirm',
                     component: OrderConfirm,
                 },
                 {
-                    path: '/orderlist',
+                    path: 'orderlist',
                     name: 'order-list',
                     component: OrderList
                 },
                 {
-                    path: '/orderpay',
+                    path: 'pay',
                     name: 'order-pay',
                     component: OrderPay
+                },
+                {
+                    path: 'alipay',
+                    name: 'order-alipay',
+                    component: Alipay
                 }
                 
             ]

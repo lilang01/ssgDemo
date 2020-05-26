@@ -78,4 +78,26 @@ export default new Router({
         }
     ]
 })
+<!-- 上一个页面参数 -->
+this.$route.params
 
+### element-ui按需加载手记
+npm i element-ui babel-plugin-component -D
+<!-- babel.config.js 按需加载 -->
+"plugins": [
+    [
+      "component",
+      {
+        "libraryName": "element-ui",
+        "styleLibraryName": "theme-chalk"
+      }
+    ]
+]
+<!-- vue用法一 -->
+import { Message } from 'element-ui';
+Message.warning("");
+<!-- vue全局用法 -->
+import { Message } from 'element-ui';
+Vue.use(Message)
+Vue.prototype.$message = Message;
+this.$message.warning("");

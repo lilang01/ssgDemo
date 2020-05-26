@@ -36,4 +36,11 @@ export default {
 <style>
 @import "./assets/css/style.css";
 @import "./assets/css/modal.css";
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+
 </style>
