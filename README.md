@@ -62,6 +62,7 @@ this.axios.get("",{
 ```
 
 ### vue-router手记
+```
 import router from './router'
 <!-- 使用router -->
 Vue.use(Router);
@@ -80,8 +81,9 @@ export default new Router({
 })
 <!-- 上一个页面参数 -->
 this.$route.params
-
+```
 ### element-ui按需加载手记
+```
 npm i element-ui babel-plugin-component -D
 <!-- babel.config.js 按需加载 -->
 "plugins": [
@@ -101,3 +103,4 @@ import { Message } from 'element-ui';
 Vue.use(Message)
 Vue.prototype.$message = Message;
 this.$message.warning("");
+```
