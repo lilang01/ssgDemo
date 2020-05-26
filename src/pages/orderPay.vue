@@ -84,10 +84,13 @@
 
 <script>
 import Modal from "./../components/Modal";
+import QRCode from "qrcode";
+import ScanPayCode from "./../components/ScanPayCode";
 export default {
   name: "order-pay",
   components: {
-    Modal
+    Modal,
+    ScanPayCode
   },
   data() {
     return {
@@ -99,7 +102,7 @@ export default {
       showPayModal: false,
       showPay: false, //是显示微信以付对话框
       showDetail: false, //显否显示订单详情
-      T: '',//定时器
+      T: "" //定时器
     };
   },
   mounted() {
@@ -113,6 +116,12 @@ export default {
         this.orderDetail = res.orderItemVoList;
         this.payment = res.payment;
       });
+    },
+    //关闭微信弹框
+    closePayModal() {
+      this.showPay = false;
+      this.showPayModal = true;
+      clearInterval(this.T);
     },
     paySubmit(payType) {
       this.payType = payType;
@@ -138,19 +147,18 @@ export default {
           });
       }
     },
-    loopOrderState () {
+    loopOrderState() {
       this.T = setInterval(() => {
-        this.axios.get(`/orders/${this.orderId}`)
-          .then((res) => {
-            if (res.status == 20) {
-              clearInterval(this.T);
-              this.goOrderList();
-            }
-          })
+        this.axios.get(`/orders/${this.orderId}`).then(res => {
+          if (res.status == 20) {
+            clearInterval(this.T);
+            this.goOrderList();
+          }
+        });
       }, 1000);
     },
-    goOrderList () {
-      this.$router.push('/order/list');
+    goOrderList() {
+      this.$router.push("/order/list");
     }
   }
 };

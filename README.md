@@ -104,3 +104,52 @@ Vue.use(Message)
 Vue.prototype.$message = Message;
 this.$message.warning("");
 ```
+
+### qrCode 二维码插件
+```
+npm i qrcode
+<!-- vue用法一 -->
+import QRCode from 'qrcode';
+QRCode.toDataURL('').then(url => {
+});
+```
+
+### pagination 分页器
+```
+import { Pagination} from 'element-ui'
+<el-pagination
+          class="pagination"
+          background
+          layout="prev, pager, next"
+          :pageSize="pageSize"
+          :total="total"
+          @current-change="handlePageChange"
+></el-pagination>
+```
+
+### vue-infinite-scroll 滚动加载更多
+```
+import infiniteSCroll from 'vue-infinite-scroll'
+<!-- 局部使用 -->
+directives:{infiniteSCroll}
+<!-- 滚动底部方法 -->
+v-infinite-scroll="scrollMore"
+<!-- 禁用 -->
+infinite-scroll-disabled="busy"
+<!-- 距离底部高度执行 -->
+infinite-scroll-distance="410"
+```
+
+### 路由按需加载
+```
+<!-- 方式一 -->
+component: resolve =>require(['./pages/product.vue'],resolve)
+<!-- 方式二 -->
+npm i @babel/plugin-syntax-dynamic-import
+() => import('./pages/product.vue')
+```
+
+
+### 图片压缩
+```
+https://tinypng.com/
